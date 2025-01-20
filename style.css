@@ -1,55 +1,98 @@
-/* Basic styles for your form */
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f7f7f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        box-sizing: border-box;
+}
+
+.form-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
     text-align: center;
 }
 
-main {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
+.form-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.input-group {
+    margin-bottom: 20px;
 }
 
 label {
-    margin-bottom: 5px;
+    font-size: 1rem;
+        color: #333;
+        display: block;
+        margin-bottom: 8px;
+    }
+    
+    input,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        color: #333;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    
+    textarea {
+        min-height: 120px;
+        resize: vertical;
 }
 
-input {
-    margin-bottom: 15px;
-    padding: 8px;
-    font-size: 16px;
+input:focus,
+textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
 }
 
-button {
-    padding: 10px;
+button.submit-button {
     background-color: #4CAF50;
     color: white;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 15px;
+        font-size: 1rem;
     border: none;
     border-radius: 5px;
+    width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
 }
 
-button:hover {
+button.submit-button:hover {
     background-color: #45a049;
 }
 
-#responseMessage {
+.response-message {
     margin-top: 20px;
-    font-size: 18px;
+    text-align: center;
+        font-size: 1.1rem;
+        color: #4CAF50;
 }

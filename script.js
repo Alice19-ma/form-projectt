@@ -3,11 +3,11 @@ document.getElementById("myForm").addEventListener("submit", function(event) {
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
 
-    if (name && email) {
-        document.getElementById("responseMessage").textContent = `Thank you, ${name}. We have received your information!`;
+    if (name && email && message) {
+        document.getElementById("responseMessage").textContent = `Thank you, ${name}! Your message has been received. We'll get back to you shortly.`;
     } else {
-        document.getElementById("responseMessage").textContent = "Please fill out all fields.";
+        document.getElementById("responseMessage").textContent = "Please fill out all fields before submitting.";
     }
 });
-
