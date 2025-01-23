@@ -27,8 +27,7 @@ nav {
 /* Logo styling */
 .logo img {
     height: 40px;
-    /* Adjust the size of the logo */
-    width: auto;
+    width: 120px;
     display: block;
 }
 
@@ -81,6 +80,9 @@ nav ul li a:active {
 
 /* Show the navigation menu on smaller screens */
 @media (max-width: 768px) {
+    nav img {
+        width: 110px;
+    }
     nav ul {
         display: none;
         /* Hide the navigation menu by default */
