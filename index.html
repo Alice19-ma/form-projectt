@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>EasyLoanApprove</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -12,7 +13,10 @@
             <div class="logo">
                 <img src="./assets/img/prosperLogo.svg" alt="Logo" />
             </div>
-            <ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-list">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="account-link.html">Account Link</a></li>
@@ -97,24 +101,52 @@
     </section>
 
     <footer>
-        <div class="contact">
-            <h2>Contact Us</h2>
-            <p>595 Market Street Suite 200</p>
-            <p>San Francisco, CA 94105</p>
-            <p>United States</p>
-            <p>Email: <a href="mailto:easyloans@coriva.me">easyloans@coriva.me</a></p>
+        <div class="footer-container">
+            <div class="footer-row">
+                <div class="col">
+                    <h2>Prosper Market Place</h2>
+                    <p>
+                        "Empowering individuals to achieve their financial goals."
+                    </p>
+                    <ul class="social-media">
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Pages</h3>
+                    <ul>
+                        <li><a href="index.html" style="color: white; text-decoration: none;">Home</a></li>
+                        <li><a href="about.html" style="color: white; text-decoration: none;">About</a></li>
+                        <li><a href="account-link.html" style="color: white; text-decoration: none;">Account Link</a></li>
+                        <li><a href="contact.html" style="color: white; text-decoration: none;">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li>Bad Credit Loans</li>
+                        <li>Same Day Funding</li>
+                        <li>Private Lending</li>
+                        <li>Flexible Loan Options</li>
+                        <li>Unsecured Personal Loans</li>
+                    </ul>
+                </div>
+                <div class="col contact">
+                    <h3>Contact</h3>
+                    <p>221 Main Street, Suite 300 | San Francisco, CA 94105</p>
+                    <p>Phone: (279) 218-7865</p>
+                    <p>Email: info@prospermarketplace.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Prosper Market Place. All rights reserved.
+            </div>
         </div>
-        <div class="links">
-            <h3>Useful Links</h3>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="#account">Account Link</a></li>
-            </ul>
-        </div>
-        <p>&copy; Copyright EasyLoanApprove. All Rights Reserved.</p>
     </footer>
+
+    <script src="./script.js"></script>
 </body>
 </html>
