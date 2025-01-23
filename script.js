@@ -3,8 +3,6 @@ const supabaseUrl = 'https://gutkqbxzhakewweqjhek.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd1dGtxYnh6aGFrZXd3ZXFqaGVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzc2MTgyNzcsImV4cCI6MjA1MzE5NDI3N30.4e1TcXr2k6m0DkU2F6oCllWJrdkvuY5dzdg9SrhqbcQ';
 supabase = createClient(supabaseUrl, supabaseKey);
 
-console.log('Supabase initialized:', supabase);
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('accountForm');
     if (form) {
