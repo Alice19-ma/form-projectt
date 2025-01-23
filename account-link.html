@@ -85,8 +85,9 @@
 
     <script>
         const { createClient } = supabase
-        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_KEY;
+        const { NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_KEY } = process.env;
+        const supabaseUrl = NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseKey = NEXT_PUBLIC_SUPABASE_KEY;
         supabase = createClient(supabaseUrl, supabaseKey);
 
         console.log('Supabase initialized:', supabase);
