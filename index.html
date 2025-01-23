@@ -3,39 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Submission</title>
-    <link rel="stylesheet" href="style.css">
+    <title>EasyLoanApprove</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#account">Account Link</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="container">
-        <div class="form-container">
-            <h1 class="form-title">Get in Touch</h1>
-            <p class="form-description">Please fill out the form below and we'll get back to you as soon as possible.</p>
-
-            <form id="myForm">
-                <div class="input-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
-                </div>
-
-                <div class="input-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
-                </div>
-
-                <button type="submit" class="submit-button">Submit</button>
-            </form>
-
-            <p id="responseMessage" class="response-message"></p>
+    <section id="home">
+        <h1>Your Lightning Fast and Reliable Private Money Lending</h1>
+        <p>Get same-day funding for bad credit loans and personal unsecured loans.</p>
+        <form>
+            <label for="email">Enter your Email address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+        </form>
+        <div class="statistics">
+            <p><strong>2322</strong> Clients</p>
+            <p><strong>1854</strong> Loans approved</p>
+            <p><strong>1453</strong> Hours of support</p>
+            <p><strong>35</strong> Aggregators</p>
         </div>
-    </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We provide easy access to the funds you desperately need.</p>
+        <p>Most mainstream lenders will force you to go through a lengthy process and then revert back to you later. We understand time is of the essence, and this is why we can usually provide access to funds in under a few hours.</p>
+        <ol>
+            <li>Complete our quick application form by clicking the "Account Link" button above and submitting the online form.</li>
+            <li>Once accepted, we will forward you to the lender's completion page or send an email to you.</li>
+            <li>You will usually receive the funds the next working day.</li>
+        </ol>
+    </section>
+
+    <section id="services">
+        <h2>Loan Services</h2>
+        <p>We provide bad credit loans and personal unsecured loans quickly.</p>
+
+        <div class="service">
+            <h3>Unsecured Personal Loans</h3>
+            <p>Get unsecured personal loans with fast approval and funding, tailored to meet your specific requirements.</p>
+        </div>
+
+        <div class="service">
+            <h3>Bad Credit Loans</h3>
+            <p>Our bad credit loans provide quick access to funds, helping you overcome financial challenges efficiently.</p>
+        </div>
+
+        <div class="service">
+            <h3>Same Day Funding</h3>
+            <p>Our same-day funding ensures you receive the financial support you need without delay, making it easier to manage unexpected expenses or urgent financial needs effectively.</p>
+        </div>
+
+        <div class="service">
+            <h3>Private Lending</h3>
+            <p>As a private money lender, we specialize in offering tailored financial solutions to meet your unique needs, regardless of your credit history or financial situation.</p>
+        </div>
+    </section>
+
+    <section id="features">
+        <h2>Features</h2>
+        <p>Get funds in a few steps, help when you need it the most.</p>
+        <ul>
+            <li>We provide easy access to the funds you desperately need.</li>
+            <li>We understand time is of the essence, and this is why we can usually provide access to funds in under a few hours.</li>
+            <li>Click the "Account Link" button above and submit the online form.</li>
+            <li>Once accepted, we will forward you to the lender's completion page or send an email to you.</li>
+            <li>You will usually receive the funds the next working day.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>595 Market Street Suite 200</p>
+            <p>San Francisco, CA 94105</p>
+            <p>United States</p>
+            <p>Email: <a href="mailto:easyloans@coriva.me">easyloans@coriva.me</a></p>
+        </div>
+        <div class="links">
+            <h3>Useful Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#account">Account Link</a></li>
+            </ul>
+        </div>
+        <p>&copy; Copyright EasyLoanApprove. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
