@@ -37,7 +37,7 @@ nav ul {
 /* Link styles */
 nav ul li a {
     text-decoration: none; /* Remove underline */
-    color: #ff7900; /* Button color */
+    color: #818181; /* Button color */
     font-family: 'Arial', sans-serif; /* Minimal, clean font */
     font-size: 18px; /* Increased font size for the buttons */
     font-weight: 500; /* Medium font weight */
@@ -46,13 +46,48 @@ nav ul li a {
 
 /* Hover and active states for links */
 nav ul li a:hover {
-    color: #ff5500; /* Slightly darker orange on hover */
+    color: #cc4400; /* Slightly darker orange on hover */
 }
 
 nav ul li a:active {
     color: #cc4400; /* Even darker orange when active */
 }
 
+/* Style the toggle button */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+/* Show the navigation menu on smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the navigation menu by default */
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        background-color: #fff;
+        width: 50%;
+        text-align: center;
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+/* Style the toggle button icon */
+.menu-toggle i {
+    font-size: 20px;
+}
+/* Show the navigation menu when the toggle button is clicked */
+.menu-toggle.active + ul {
+    display: block;
+}
 
 /* HERO SECTION  */
 
@@ -170,103 +205,164 @@ nav ul li a:active {
     height: auto;
 }
 
-
-
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    height: 100vh;
 }
 
+/* Form Account Link CSS starts below */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
+/* HERO SECTION */
+.hero {
+    background-color: #f0f0f0;
+    text-align: center;
+    position: relative; /* Add this to position child elements */
+}
+
+.hero-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.hero-content {
+    position: absolute; /* Change to absolute for overlay */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the content */
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #555;
+}
 .form-container {
     background-color: #fff;
-    padding: 40px;
+    /* padding: 40px; */
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        max-width: 500px;
-        box-sizing: border-box;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
 }
-
 .form-title {
     font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
     text-align: center;
 }
-
 .form-description {
     font-size: 1rem;
     color: #555;
     margin-bottom: 20px;
     text-align: center;
 }
-
 .input-group {
-    margin-bottom: 20px;
+    margin: 20px;
 }
-
 label {
     font-size: 1rem;
-        color: #333;
-        display: block;
-        margin-bottom: 8px;
-    }
-    
-    input,
-    textarea {
-        width: 100%;
-        padding: 12px;
-        font-size: 1rem;
-        color: #333;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-    
-    textarea {
-        min-height: 120px;
-        resize: vertical;
+    color: #333;
+    display: block;
+    margin-bottom: 8px;
 }
-
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
 input:focus,
 textarea:focus {
     border-color: #4CAF50;
     outline: none;
 }
-
 button.submit-button {
-    background-color: #4CAF50;
+    background-color: #fba70c;
     color: white;
     padding: 15px;
-        font-size: 1rem;
+    font-size: 1rem;
     border: none;
     border-radius: 5px;
     width: 100%;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-
 button.submit-button:hover {
-    background-color: #45a049;
+    background-color: #e35302;
 }
-
 .response-message {
     margin-top: 20px;
     text-align: center;
-        font-size: 1.1rem;
-        color: #4CAF50;
+    font-size: 1.1rem;
+    color: #4CAF50;
+}
+/* Responsive layout for smaller screens */
+@media (min-width: 768px) {
+    .input-group {
+        width: 100%;
+        /* Adjust width for smaller screens */
+    }
+    .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-container {
+        padding: 20px;
+        /* Reduce padding on smaller screens */
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-top: 0;
+    }
+    .form-container {
+        padding: 20px;
+    }
+    .hero-image {
+        width: 135%;
+    }
+    .hero-title {
+        width: 210px;
+        font-size: 2rem;
+    }
+    .hero-description {
+        font-size: 0.6rem;
+    }
 }
